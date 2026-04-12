@@ -11,12 +11,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
-      - name: List files
-        run: find . -name "settings.gradle" 
-      
       - name: Build APK
         run: |
-          cd $(dirname $(find . -name "settings.gradle" | head -1))
+          cd "jarvis finally/jarvis2"
           gradle assembleDebug
       
       - uses: actions/upload-artifact@v4
