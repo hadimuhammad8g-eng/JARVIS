@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0d0d10"
+    android:padding="0dp">
+
+    <!-- TOP BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#111115"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="JARVIS"
+            android:textColor="#4f8ef7"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.15"/>
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starting..."
+            android:textColor="#555870"
+            android:textSize="12sp"
+            android:fontFamily="monospace"/>
+
+    </LinearLayout>
+
+    <!-- DIVIDER -->
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1e1e24"/>
+
+    <!-- COMMAND DISPLAY -->
+    <TextView
+        android:id="@+id/tvCommand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap mic and speak..."
+        android:textColor="#555870"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:background="#111115"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1e1e24"/>
+
+    <!-- RESPONSE AREA -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tvResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#c8cad8"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:gravity="top"/>
+
+    </ScrollView>
+
+    <!-- BOTTOM PANEL -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#111115"
+        android:paddingTop="16dp"
+        android:paddingBottom="36dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:gravity="center">
+
+        <!-- COMMANDS HINT -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="open app  •  time  •  date  •  alarm at 7 AM  •  search  •  battery"
+            android:textColor="#333344"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- MIC BUTTON -->
+        <ImageButton
+            android:id="@+id/btnMic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_mic"
+            android:background="@drawable/mic_bg"
+            android:contentDescription="Microphone"
+            android:scaleType="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tap to speak"
+            android:textColor="#333344"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
