@@ -5,15 +5,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+      
+      - name: List files
+        run: find . -name "settings.gradle" 
+      
       - name: Build APK
-        run: cd jarvis && gradle assembleDebug
+        run: |
+          cd $(dirname $(find . -name "settings.gradle" | head -1))
+          gradle assembleDebug
+      
       - uses: actions/upload-artifact@v4
         with:
           name: JARVIS-APK
-          path: jarvis/app/build/outputs/apk/debug/app-debug.apk
+          path: "**/app-debug.apk"
