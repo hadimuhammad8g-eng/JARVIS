@@ -11,10 +11,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
-      - name: Build APK
+    - name: Build APK
         run: |
           cd "jarvis finally/jarvis2"
-          gradle assembleDebug
+          gradle assembleDebug --warning-mode all
       
       - uses: actions/upload-artifact@v4
         with:
